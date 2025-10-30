@@ -1,0 +1,3 @@
+Remove common modals/consent popups; neutralize fixed/sticky elements.
+
+`javascript:(()=>{const kill=['[role="dialog"]','[class*="modal"]','[class*=="popup"]','[id*="consent"]','[id*="cookie"]'];kill.forEach(sel=>document.querySelectorAll(sel).forEach(n=>n.remove()));[...document.querySelectorAll('*')].forEach(el=>{const s=getComputedStyle(el);if(s.position==='fixed'||s.position==='sticky'){el.style.position='static'}});alert('De-gunked.');})();`
